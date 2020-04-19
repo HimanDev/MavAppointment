@@ -1,5 +1,8 @@
 package com.uta.mav.appoint.dto;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class User {
 
     public String getDept() {
@@ -10,12 +13,12 @@ public class User {
         this.dept = dept;
     }
 
-    public String getGegreeType() {
-        return gegreeType;
+    public String getDegreeType() {
+        return degreeType;
     }
 
-    public void setGegreeType(String gegreeType) {
-        this.gegreeType = gegreeType;
+    public void setDegreeType(String degreeType) {
+        this.degreeType = degreeType;
     }
 
     public String getMajor() {
@@ -58,5 +61,39 @@ public class User {
         this.email = email;
     }
 
-    private String dept, gegreeType, major, lastNameInitial, studentId, phoneNo, email;
+    private String dept;
+    private String degreeType;
+    private String major;
+    private String lastNameInitial;
+    private String studentId;
+    private String phoneNo;
+    private String email;
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    private String role;
+
+    public void setUserFromJson(JSONObject resBody) {
+        try {
+            role=resBody.getString("role");
+            degreeType=resBody.getString("degree_type");
+            studentId=resBody.getString("student_id");
+            phoneNo=resBody.getString("phone");
+            lastNameInitial=resBody.getString("last_name_initial");
+            email=resBody.getString("email");
+
+        }catch (JSONException e){
+
+        }
+    }
+
+    public interface UserResponse{
+         void addUser(User user);
+    }
 }

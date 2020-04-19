@@ -10,13 +10,13 @@ import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.uta.mav.appoint.R;
-import com.uta.mav.appoint.doa.ProxyUserDaoImpl;
+import com.uta.mav.appoint.doa.UserDaoImpl;
 
 import java.util.ArrayList;
 
 public class Register extends AppCompatActivity {
 
-    ProxyUserDaoImpl proxyUserDao;
+    UserDaoImpl proxyUserDao;
 
     Spinner deptSpinner;
     Spinner degreeTypeSpinner;
@@ -31,7 +31,7 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         registerIds();
-        proxyUserDao=new ProxyUserDaoImpl();
+        proxyUserDao=new UserDaoImpl();
         loadDepartments();
         loadDegreeType();
         loadMajor();
