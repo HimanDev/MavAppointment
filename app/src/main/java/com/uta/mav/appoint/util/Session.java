@@ -16,7 +16,7 @@ public class Session {
     public static final String KEY_ROLE="ROLE";
     public static final String KEY_USER_ID="USER_ID";
     public static final String KEY_DEPT="DEPT";
-    public static final String KEY_DEGREE_TYPE="DEGREE_TYPR";
+    public static final String KEY_DEGREE_TYPE="DEGREE_TYPE";
     public static final String KEY_MAJOR="MAJOR";
     public static final String KEY_PHONE="PHONE";
 
