@@ -1,5 +1,6 @@
 package com.uta.mav.appoint.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,7 @@ public class StudentHome extends AppCompatActivity {
             public void onClick(View v) {
                 Session session=new Session(StudentHome.this);
                 session.logout();
+                startActivity(new Intent(StudentHome.this, LoginActivity.class));
             }
         });
     }
