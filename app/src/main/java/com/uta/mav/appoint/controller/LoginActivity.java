@@ -66,4 +66,10 @@ public class LoginActivity extends AppCompatActivity {
         password.setText("5dum3vj5dp");
         login=(Button)findViewById(R.id.login);
     }
+
+    public void startRegistration(View view)
+    {
+        startActivity(new Intent( LoginActivity.this, Register.class));
+    }
+
 }
